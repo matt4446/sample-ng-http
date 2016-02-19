@@ -1,12 +1,10 @@
-{
-    "result": [
-        {
-            "name": "John Smith",
-            "age": 33
-        },
-        {
-            "name": "Mike Smith",
-            "age": 34
-        }
-    ]
-}
+[
+    {
+        "name": "John Smith",
+        "age": 33
+    },
+    {
+        "name": "Mike Smith",
+        "age": 34
+    }
+]
