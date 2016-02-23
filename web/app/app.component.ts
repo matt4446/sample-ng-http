@@ -12,6 +12,10 @@ interface Person {
     selector: 'my-app',
     template: `<h1>My First Angular 2 App</h1>
     <div>{{people | json}}</div>
+    <div *ngFor="#person of people">
+        {{person.Name}}
+    </div>
+    
     `
 })
 export class AppComponent {

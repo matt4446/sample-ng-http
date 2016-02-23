@@ -30,7 +30,7 @@ export class MainPage {
     }
 
     public ngOnInit() {
-        this.http.get('https://breakouttrampoliningwebservices.azurewebsites.net/Api/Providers/List/Enabled')
+        this.http.get('http://breakouttrampoliningwebservices.azurewebsites.net/Api/Providers/List/Enabled')
             .map(response => {
                 return response.json()
             })
