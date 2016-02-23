@@ -2,7 +2,7 @@
 	"nativescript": {
 		"id": "org.nativescript.helloworldng",
 		"tns-android": {
-			"version": "1.6.0"
+			"version": "1.6.1"
 		}
 	},
 	"name": "nativescript-hello-world-ng",
@@ -42,7 +42,7 @@
 		"lite-server": "^1.3.4",
 		"nativescript-dev-typescript": "^0.2.2",
 		"shelljs": "^0.5.3",
-		"typescript": "^1.7.5"
+		"typescript": "^1.8.2"
 	},
 	"scripts": {
 		"lite": "lite-server"

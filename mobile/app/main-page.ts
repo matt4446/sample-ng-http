@@ -17,7 +17,7 @@ interface Person {
 <StackLayout orientation='vertical'>
     <Label [text]='message' class='title' (tap)='message = "OHAI"'></Label>
     <Label [text]='"loaded people: " + people.length' class='title'></Label>
-    <Label *ngFor="#person of people" [text]='person.name'></Label>
+    <Label *ngFor="#person of people" [text]='person.Name'></Label>
 </StackLayout>
 `,
 })
@@ -30,11 +30,11 @@ export class MainPage {
     }
 
     public ngOnInit() {
-        this.http.get('http://192.168.56.1:3000/data.json')
+        this.http.get('https://breakouttrampoliningwebservices.azurewebsites.net/Api/Providers/List/Enabled')
             .map(response => {
                 return response.json()
             })
-            .subscribe((items: Person[]) => {
+            .subscribe((items: any) => {
                 console.log('items: ' + items);
                 this.people = items;
             }, error => console.dump(error))

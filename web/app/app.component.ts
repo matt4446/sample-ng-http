@@ -21,7 +21,7 @@ export class AppComponent {
     }
 
     public ngOnInit() {
-        this.http.get('http://localhost:3000/data.json')
+        this.http.get('https://breakouttrampoliningwebservices.azurewebsites.net/Api/Providers/List/Enabled')
             .map(response => {
                 console.log(response.json);
                 console.log(response.json());
