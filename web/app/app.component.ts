@@ -1,3 +1,4 @@
+///<reference path="../node_modules/angular2/typings/browser.d.ts" />
 import "rxjs/add/operator/map";
 import {Component, Input} from 'angular2/core';
 import {Http} from 'angular2/http';
@@ -26,8 +27,9 @@ export class AppComponent {
                 console.log(response.json());
                 return response.json()
             })
-            .subscribe(
-                response => this.people = response.result,
-                error => console.log('ERROR: ' + error))
+            .subscribe((items: Person[]) => {
+                console.log('items: ' + items);
+                this.people = items;
+            }, error => console.log(error))
     }
 }

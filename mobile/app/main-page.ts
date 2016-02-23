@@ -17,6 +17,7 @@ interface Person {
 <StackLayout orientation='vertical'>
     <Label [text]='message' class='title' (tap)='message = "OHAI"'></Label>
     <Label [text]='"loaded people: " + people.length' class='title'></Label>
+    <Label *ngFor="#person of people" [text]='person.name'></Label>
 </StackLayout>
 `,
 })
@@ -31,11 +32,11 @@ export class MainPage {
     public ngOnInit() {
         this.http.get('http://192.168.56.1:3000/data.json')
             .map(response => {
-                console.dump(response.json());
                 return response.json()
             })
-            .subscribe(
-                response => this.people = response.result,
-                error => console.dump(error))
+            .subscribe((items: Person[]) => {
+                console.log('items: ' + items);
+                this.people = items;
+            }, error => console.dump(error))
     }
 }
